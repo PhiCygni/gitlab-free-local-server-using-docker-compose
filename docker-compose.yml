@@ -1,0 +1,26 @@
+version: '3.6'
+services:
+  phi-cygni-gitlab-server-container:
+    image: 'gitlab/gitlab-ee:14.8.1-ee.0'
+    container_name: phi-cygni-gitlab-server-container
+    restart: always
+    hostname: '${GITLAB_HOSTNAME}'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://${GITLAB_HOSTNAME}:7080'
+        # Add any other gitlab.rb configuration here, each on its own line
+    ports:
+      - '7080:7080'
+      - '7443:443'
+      - '7022:22'
+    volumes:
+      - './config:/etc/gitlab'
+      - './logs:/var/log/gitlab'
+      - './data:/var/opt/gitlab'
+    shm_size: '256m'
+    networks:
+      - phi-cygni-gitlab-server-network
+
+networks:
+  phi-cygni-gitlab-server-network:
+    driver: bridge
