@@ -4,7 +4,7 @@ Sometimes one is not allowed to, or just don't feel comfortable, putting code in
 
 This repo contains a docker compose script to set up and self-host a local instance of GitLab server. It’s an alternative to GitHub able to run locally for free and is very easy to set up. The script was tested on Linux and Windows but should work on any platform able to run Docker.
 
-This repo was originally written for [this blog story](https://medium.com/p/79d69f052db7).
+This repo was originally written for [this blog story](https://medium.com/@emileross/you-love-github-but-dont-like-putting-your-code-in-the-cloud-79d69f052db7).
 
 # Follow these steps to set up GitLab locally
 
