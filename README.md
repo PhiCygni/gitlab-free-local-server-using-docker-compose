@@ -54,7 +54,7 @@ Example output:
 
 &nbsp;
 
-One can now access the GitLab UI using URL ```http://MY_HOSTNAME:7080/```. For instance if the hostname is ```mydesktop``` then the URL is https://mydesktop:7080. The username is ```root``` and we just found the password in the step above. Log in as ```root``` to get started.
+One can now access the GitLab UI using URL ```http://MY_HOSTNAME:7080/```. For instance if the hostname is ```mydesktop``` then the URL is http://mydesktop:7080. The username is ```root``` and we just found the password in the step above. Log in as ```root``` to get started.
 
 
 Note: URL http://localhost:7080/ will also work to access the server, but the local hostname will be required if one wants to access the server from another computers on the local LAN.
