@@ -2,19 +2,9 @@
 
 Sometimes one is not allowed to, or just don't feel comfortable, putting code into the cloud. However, you still want some way of managing your Git repos locally in the style of GitHub or BitBucket. If that's the case I have a solution for you.
 
-This repo contains a docker compose script to set up a local instance of GitLab server. It’s an alternative to GitHub able to run locally for free and is very easy to set up. The script was tested on Linux and Windows but should work on any platform able to run Docker.
+This repo contains a docker compose script to set up and self-host a local instance of GitLab server. It’s an alternative to GitHub able to run locally for free and is very easy to set up. The script was tested on Linux and Windows but should work on any platform able to run Docker.
 
-Thanks for reading this. My socials are:
-
-https://phicygni.com/
-
-https://github.com/PhiCygni
-
-https://medium.com/@emileross
-
-https://twitter.com/PhiCygni
-
-https://www.facebook.com/PhiCygni/
+This repo was originally written for [this blog story](https://medium.com/p/79d69f052db7).
 
 # Follow these steps to set up GitLab locally
 
@@ -75,12 +65,14 @@ Note: URL http://localhost:7080/ will also work to access the server, but the lo
 
 Your GitLab container is now running and you can access the UI. Now do the following to start using it:
 
-1. Log in with the root account and for security reasons make a new user with admin rights and use it for everyday admin tasks. The root account should only be used when needed. It should also the noted the root account can only be used using localhost access and remote access is not allowed. Therefore creating another admin user is probably for the best.
+1. Log in with the root account and for security reasons make a new user with admin rights and use it for everyday admin tasks. The root account should only be used when needed. It should also the noted the root account can only be used using localhost access and remote access is not allowed. Therefore creating another admin user is recommended.
 2. Configure your firewall to open up port ```TCP 7080``` if access to other LAN computers is required.
 
 # Using GitLab with a SSL certificate
 
-It is very possible to generate a SSL certificate for GitLab so that HTTPS can be used instead of just HTTP. One can generate a Certificate Authority and then add it to all computers on the LAN so that the server can be accessed using a HTTPS connection with a verified certificate. If I get enough stars and comments on this repo I will endeavour to expand this repo to incorporate the configuration of verified HTTPS access.
+It should be noted my script design currently does not make of the SSL HTTPS capability of GitLab and uses only the non-encrypted HTTP protocol. This was intentional to keep install steps to a minimum and simplify things as much as possible. In my opinion using HTTP only is not the end of the world given that the recommended use case of my script is for a private local network.
+
+However, it is very possible to generate a SSL certificate for GitLab so that HTTPS can be used instead of just HTTP. One can generate a Certificate Authority and then add it to all the client computers requiring a verified HTTPS connection to the GitLab server. I will expand this repo to incorporate the addition of verified HTTPS access if I see there is enough interest.
 
 # Steps to completely remove the GitLab container
 
